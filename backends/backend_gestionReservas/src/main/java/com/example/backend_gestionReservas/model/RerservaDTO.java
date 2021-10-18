@@ -2,6 +2,8 @@ package com.example.backend_gestionReservas.model;
 
 import lombok.*;
 
+import java.util.ArrayList;
+
 
 @Setter
 @Getter
@@ -10,7 +12,9 @@ import lombok.*;
 @Builder
 public class RerservaDTO {
     private String id;
-    private String id_usuario;
+    private ArrayList<String> personas_finales;
+    private ArrayList<String> personas_reserva;
+    private ArrayList<String> personas_monitor;
     private String id_actividad;
 
 }

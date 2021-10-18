@@ -14,6 +14,8 @@ import java.util.ArrayList;
 public class ReservaVO {
 
     private String id;
-    private String id_usuario;
+    private ArrayList<String> personas_finales;
+    private ArrayList<String> personas_reserva;
+    private ArrayList<String> personas_monitor;
     private String id_actividad;
 }
