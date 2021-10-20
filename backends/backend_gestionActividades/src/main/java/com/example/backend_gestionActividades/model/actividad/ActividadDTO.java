@@ -24,6 +24,7 @@ public class ActividadDTO {
     private Double precio;
 }
 
+
 /*
 {
     "nombre_actividad" : "",
@@ -37,3 +38,4 @@ public class ActividadDTO {
     "precio" : "2.5"
 }
 */
+
