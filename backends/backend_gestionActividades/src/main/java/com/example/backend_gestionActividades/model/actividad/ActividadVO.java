@@ -1,6 +1,9 @@
 package com.example.backend_gestionActividades.model.actividad;
 
 import lombok.*;
+
+import org.springframework.data.annotation.Id;
+
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.ArrayList;
@@ -11,9 +14,11 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@ToString
 @Document(collection = "Actividad")
 public class ActividadVO {
 
+    @Id
     private String id;
     private String nombre_actividad;
     private String tipo_actividad;

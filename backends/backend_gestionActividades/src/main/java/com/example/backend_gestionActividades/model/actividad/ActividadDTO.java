@@ -10,6 +10,7 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@ToString
 public class ActividadDTO {
     private String id;
     private String nombre_actividad;
@@ -22,3 +23,19 @@ public class ActividadDTO {
     private Date fecha_final;
     private Double precio;
 }
+
+
+/*
+{
+    "nombre_actividad" : "",
+    "tipo_actividad":"",
+    "descripcion" : "",
+    "dificultad" : "",
+    "materiales_proporcionados" : [],
+    "materiales_necesarios" : [],
+    "fecha_inicio" : "1471212000",
+    "fecha_final" : "1471212000",
+    "precio" : "2.5"
+}
+*/
+

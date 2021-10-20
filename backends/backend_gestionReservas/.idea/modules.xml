@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../backend_gestionActividades/backend_gestionActividades.iml" filepath="$PROJECT_DIR$/../backend_gestionActividades/backend_gestionActividades.iml" />
+      <module fileurl="file://$PROJECT_DIR$/backend_gestionReservas.iml" filepath="$PROJECT_DIR$/backend_gestionReservas.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../backend_gestionUsuarios/demo.iml" filepath="$PROJECT_DIR$/../backend_gestionUsuarios/demo.iml" />
+    </modules>
+  </component>
+</project>

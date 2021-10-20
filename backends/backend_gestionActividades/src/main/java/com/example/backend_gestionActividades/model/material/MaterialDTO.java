@@ -6,6 +6,7 @@ import lombok.*;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 @Builder
 public class MaterialDTO {
 
