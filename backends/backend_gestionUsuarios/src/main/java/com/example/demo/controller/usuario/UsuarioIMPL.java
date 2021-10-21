@@ -1,7 +1,7 @@
-package com.example.demo.controller;
+package com.example.demo.controller.usuario;
 
-import com.example.demo.model.UsuarioDTO;
-import com.example.demo.service.UsuarioService;
+import com.example.demo.model.usuario.UsuarioDTO;
+import com.example.demo.service.usuario.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -49,5 +49,10 @@ public class UsuarioIMPL implements UsuarioAPI{
     @Override
     public ResponseEntity<UsuarioDTO> create(UsuarioDTO usuarioDTO) {
         return new ResponseEntity<>(usuarioService.create(usuarioDTO), HttpStatus.CREATED);
+    }
+
+    @Override
+    public ResponseEntity<UsuarioDTO> introducir_Tarjeta(String id_usuario, String num_tarjeta) {
+        return ResponseEntity.ok(usuarioService.introducir_Tarjeta(id_usuario,num_tarjeta));
     }
 }

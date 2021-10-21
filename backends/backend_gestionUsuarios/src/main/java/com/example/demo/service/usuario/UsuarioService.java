@@ -1,6 +1,6 @@
-package com.example.demo.service;
+package com.example.demo.service.usuario;
 
-import com.example.demo.model.UsuarioDTO;
+import com.example.demo.model.usuario.UsuarioDTO;
 import java.util.List;
 
 public interface UsuarioService {
@@ -16,4 +16,10 @@ public interface UsuarioService {
     boolean deleteAll();
 
     UsuarioDTO create(final UsuarioDTO usuarioDTO);
+
+    String getGenero_user(final String id);
+
+    String getTarjeta_user(final String id);
+
+    UsuarioDTO introducir_Tarjeta(final String id_usuario, final String numero_tajeta);
 }

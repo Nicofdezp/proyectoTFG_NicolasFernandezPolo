@@ -1,9 +1,11 @@
-package com.example.demo.service;
+package com.example.demo.service.usuario;
 
-import com.example.demo.model.UsuarioDTO;
+import com.example.demo.model.tarjeta_bancaria.TarjetaDTO;
+import com.example.demo.model.usuario.UsuarioDTO;
 import com.example.demo.repository.UsuarioRepository;
-import com.example.demo.service.converter.Usuario_toDTO;
-import com.example.demo.service.converter.Usuario_toVO;
+import com.example.demo.service.tarjeta_bancaria.TarjetaService;
+import com.example.demo.service.usuario.converter.Usuario_toDTO;
+import com.example.demo.service.usuario.converter.Usuario_toVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +19,9 @@ public class UsuarioServiceImpl implements UsuarioService {
 
     @Autowired
     private UsuarioRepository usuarioRepository;
+
+    @Autowired
+    private TarjetaService tarjetaService;
 
     @Autowired
     private Usuario_toDTO converter_toDTO;
@@ -88,5 +93,35 @@ public class UsuarioServiceImpl implements UsuarioService {
         }catch (Exception e) {
             return usuarioDTO;
         }
+    }
+
+    @Override
+    public String getGenero_user(String id) {
+
+        UsuarioDTO usuarioDTO = converter_toDTO.convert(usuarioRepository.findById(id).get());
+
+        return usuarioDTO.getGenero();
+    }
+
+    @Override
+    public String getTarjeta_user(String id) {
+        return converter_toDTO.convert(usuarioRepository.findById(id).get()).getTarjeta_bancaria();
+    }
+
+    @Override
+    public UsuarioDTO introducir_Tarjeta(String id_usuario, String numero_tajeta) {
+
+        TarjetaDTO tarjetaDTO = TarjetaDTO.builder()
+                .id_usuario(id_usuario)
+                .numero_tajeta(numero_tajeta)
+                .saldo_tarjeta(1500.50)
+                .build();
+
+        UsuarioDTO usuarioDTO = converter_toDTO.convert(usuarioRepository.findById(id_usuario).get());
+
+        usuarioDTO.setTarjeta_bancaria(tarjetaService.getCard_byId(tarjetaService.create(tarjetaDTO).getId()).getId());
+
+
+        return converter_toDTO.convert(usuarioRepository.save(converter_toVO.convert(usuarioDTO)));
     }
 }
