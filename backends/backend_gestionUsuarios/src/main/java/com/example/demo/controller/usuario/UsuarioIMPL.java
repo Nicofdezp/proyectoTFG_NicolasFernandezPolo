@@ -55,4 +55,9 @@ public class UsuarioIMPL implements UsuarioAPI{
     public ResponseEntity<UsuarioDTO> introducir_Tarjeta(String id_usuario, String num_tarjeta) {
         return ResponseEntity.ok(usuarioService.introducir_Tarjeta(id_usuario,num_tarjeta));
     }
+
+    @Override
+    public ResponseEntity<String> getGenero_user(String id) {
+        return ResponseEntity.ok(usuarioService.getGenero_user(id));
+    }
 }

@@ -20,7 +20,15 @@ public class EndPointUris {
 
     public static final String NOMBREUSUARIO = "/{nombre_usuario}";
 
+    public static final String GENERO = "/genero";
+
     //TARJETA
 
     public static final String TARJETA = "/tarjeta";
+
+    public static final String SALDO = "/{saldo}";
+
+    public static final String RESTAR = "/restar";
+
+    public static final String SUMAR = "/sumar";
 }

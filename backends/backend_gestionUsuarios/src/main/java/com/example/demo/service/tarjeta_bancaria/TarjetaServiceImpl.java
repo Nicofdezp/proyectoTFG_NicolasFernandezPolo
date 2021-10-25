@@ -6,7 +6,7 @@ import com.example.demo.repository.TarjetaRepository;
 import com.example.demo.service.tarjeta_bancaria.converter.Tarjeta_toDTO;
 import com.example.demo.service.tarjeta_bancaria.converter.Tarjeta_toVO;
 import com.example.demo.service.usuario.UsuarioService;
-import com.example.demo.service.usuario.converter.Usuario_toDTO;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,9 +24,6 @@ public class TarjetaServiceImpl implements TarjetaService{
 
     @Autowired
     private Tarjeta_toVO converter_toVO;
-
-    @Autowired
-    private Usuario_toDTO convertUsuario_toDTO;
 
 
 
@@ -61,13 +58,32 @@ public class TarjetaServiceImpl implements TarjetaService{
     }
 
     @Override
-    public boolean restarSaldo(Double precio) {
-        return false;
+    public TarjetaDTO restarSaldo(String id, String precio) {
+
+        UsuarioDTO usuarioDTO = usuarioService.getById(id);
+
+        TarjetaDTO tarjetaDTO = converter_toDTO.convert(tarjetaRepository.findById(usuarioDTO.getTarjeta_bancaria()).get());
+
+        Double saldo = Double.parseDouble(precio);
+
+        tarjetaDTO.setSaldo_tarjeta(tarjetaDTO.getSaldo_tarjeta() - saldo);
+
+        return converter_toDTO.convert(tarjetaRepository.save(converter_toVO.convert(tarjetaDTO)));
     }
 
     @Override
-    public boolean sumarSaldo(Double precio) {
-        return false;
+    public TarjetaDTO sumarSaldo(String id, String precio) {
+
+        UsuarioDTO usuarioDTO = usuarioService.getById(id);
+
+        TarjetaDTO tarjetaDTO = converter_toDTO.convert(tarjetaRepository.findById(usuarioDTO.getTarjeta_bancaria()).get());
+
+
+        Double saldo = Double.parseDouble(precio);
+
+        tarjetaDTO.setSaldo_tarjeta(tarjetaDTO.getSaldo_tarjeta() + saldo);
+
+        return converter_toDTO.convert(tarjetaRepository.save(converter_toVO.convert(tarjetaDTO)));
     }
 
     @Override

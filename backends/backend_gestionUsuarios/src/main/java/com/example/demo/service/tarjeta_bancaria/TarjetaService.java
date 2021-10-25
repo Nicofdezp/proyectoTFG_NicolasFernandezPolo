@@ -13,9 +13,9 @@ public interface TarjetaService {
 
     UsuarioDTO getUser_Card(final String id_tarjeta);
 
-    boolean restarSaldo(final Double precio);
+    TarjetaDTO restarSaldo(final String id, final String precio);
 
-    boolean sumarSaldo(final Double precio);
+    TarjetaDTO sumarSaldo(final String id, final String precio);
 
     TarjetaDTO getCard_byId(final String id);
 

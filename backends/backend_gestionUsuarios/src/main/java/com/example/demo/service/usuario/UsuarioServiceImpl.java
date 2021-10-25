@@ -66,6 +66,19 @@ public class UsuarioServiceImpl implements UsuarioService {
 
     @Override
     public boolean delete(String id) {
+
+        List<UsuarioDTO> cosa = usuarioRepository.findAll()
+                .stream()
+                .map(converter_toDTO::convert)
+                .collect(Collectors.toList());
+
+        for(UsuarioDTO usuarioDTO : cosa) {
+            if(usuarioDTO.getId().equals(id)) {
+                if(usuarioDTO.getTarjeta_bancaria().length() != 0) {
+                    tarjetaService.removeUserCard(usuarioDTO.getTarjeta_bancaria());
+                }
+            }
+        }
         try{
             usuarioRepository.deleteById(id);
             return Boolean.TRUE;
@@ -76,6 +89,18 @@ public class UsuarioServiceImpl implements UsuarioService {
 
     @Override
     public boolean deleteAll() {
+
+        List<UsuarioDTO> cosa = usuarioRepository.findAll()
+                .stream()
+                .map(converter_toDTO::convert)
+                .collect(Collectors.toList());
+
+        for(UsuarioDTO usuarioDTO : cosa) {
+            if(usuarioDTO.getTarjeta_bancaria().length() != 0) {
+                tarjetaService.removeUserCard(usuarioDTO.getTarjeta_bancaria());
+            }
+        }
+
         try{
             usuarioRepository.deleteAll();
             return Boolean.TRUE;

@@ -30,4 +30,8 @@ public interface UsuarioAPI {
 
     @PutMapping(EndPointUris.USUARIOS + EndPointUris.ID_VAR + EndPointUris.ID_VAR2)
     ResponseEntity<UsuarioDTO> introducir_Tarjeta(@PathVariable("id") final String id_usuario, @PathVariable("id2") final String num_tarjeta);
+
+    @GetMapping(EndPointUris.USUARIOS + EndPointUris.ID_VAR + EndPointUris.GENERO)
+    ResponseEntity<String> getGenero_user(@PathVariable final String id);
+
 }
