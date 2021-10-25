@@ -9,7 +9,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RequestMapping(EndPointUris.API + EndPointUris.V1 + EndPointUris.ACTIVIDAD)
+@CrossOrigin(origins = "*", allowedHeaders = "*")
+@RequestMapping()
 public interface ActividadAPI {
 
     @GetMapping()

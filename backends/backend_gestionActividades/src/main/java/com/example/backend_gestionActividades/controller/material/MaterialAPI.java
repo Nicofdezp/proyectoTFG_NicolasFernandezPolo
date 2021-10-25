@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RequestMapping(EndPointUris.API+EndPointUris.V1+EndPointUris.MATERIAL)
+@RequestMapping(EndPointUris.MATERIAL)
 public interface MaterialAPI {
 
     @GetMapping()
