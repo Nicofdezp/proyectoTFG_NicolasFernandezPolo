@@ -10,7 +10,7 @@ import java.util.ArrayList;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class RerservaDTO {
+public class ReservaDTO {
     private String id;
     private ArrayList<String> personas_finales;
     private ArrayList<String> personas_reserva;

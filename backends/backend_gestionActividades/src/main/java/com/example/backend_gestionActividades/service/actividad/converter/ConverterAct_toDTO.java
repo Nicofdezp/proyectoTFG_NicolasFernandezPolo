@@ -20,6 +20,9 @@ public class ConverterAct_toDTO implements Converter<ActividadVO, ActividadDTO> 
                 .fecha_inicio(actividad.getFecha_inicio())
                 .fecha_final(actividad.getFecha_final())
                 .precio(actividad.getPrecio())
+                .capacidad_minima(actividad.getCapacidad_minima())
+                .capacidad_maxima(actividad.getCapacidad_maxima())
+                .capacidad_monitor(actividad.getCapacidad_monitor())
                 .build();
     }
 }

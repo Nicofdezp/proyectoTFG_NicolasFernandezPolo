@@ -22,6 +22,9 @@ public class ActividadDTO {
     private Date fecha_inicio;
     private Date fecha_final;
     private Double precio;
+    private int capacidad_minima;
+    private int capacidad_maxima;
+    private int capacidad_monitor;
 }
 
 

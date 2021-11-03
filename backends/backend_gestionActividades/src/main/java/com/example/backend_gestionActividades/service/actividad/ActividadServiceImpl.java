@@ -7,7 +7,10 @@ import com.example.backend_gestionActividades.service.actividad.converter.Conver
 import com.example.backend_gestionActividades.service.actividad.converter.ConverterAct_toVO;
 import com.example.backend_gestionActividades.service.material.MaterialService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -58,13 +61,26 @@ public class ActividadServiceImpl implements ActividadService {
             }
         }
 
-
         return aux2;
     }
 
     @Override
     public List<ActividadDTO> getByDificult(String dificultad) {
-        return null;
+
+        List<ActividadDTO> aux = actividadRepository.findAll()
+                .stream()
+                .map(converterAct_toDTO::convert)
+                .collect(Collectors.toList());
+
+        List<ActividadDTO> aux2 = new ArrayList<>();
+
+        for(ActividadDTO actividadDTO : aux) {
+            if(dificultad.equalsIgnoreCase(actividadDTO.getDificultad())) {
+                aux2.add(actividadDTO);
+            }
+        }
+
+        return aux2;
     }
 
     @Override
@@ -88,8 +104,17 @@ public class ActividadServiceImpl implements ActividadService {
     }
 
     @Override
-    public ActividadDTO create(ActividadDTO actividad) {
+    public ActividadDTO create(ActividadDTO actividad, String id_monitor) {
         ActividadDTO actividadDTO = converterAct_toDTO.convert(actividadRepository.save(converterAct_toVO.convert(actividad)));
+
+        RestTemplate restTemplate = new RestTemplate();
+        String baseURL = "http://localhost:8085/reserva/crearReserva/"+actividadDTO.getId()+"/"+id_monitor;
+
+        try{
+            restTemplate.postForObject(baseURL,null, Void.class);
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
 
         try {
             return actividadDTO;

@@ -19,7 +19,7 @@ public interface ActividadService {
 
     boolean delete(final String id);
 
-    ActividadDTO create (final ActividadDTO actividadDTO);
+    ActividadDTO create (final ActividadDTO actividadDTO, final String id_monitor);
 
     List<MaterialDTO> getMaterialAct_proporcionados(final String id);
 

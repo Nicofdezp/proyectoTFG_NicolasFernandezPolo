@@ -31,8 +31,8 @@ public interface ActividadAPI {
     @DeleteMapping(EndPointUris.BORRAR + EndPointUris.ID)
     ResponseEntity<Boolean> delete(@PathVariable final String id);
 
-    @PostMapping(EndPointUris.CREAR_ACTIVIDAD)
-    ResponseEntity<ActividadDTO> create(@RequestBody final ActividadDTO actividadDTO);
+    @PostMapping(EndPointUris.CREAR_ACTIVIDAD + EndPointUris.ID)
+    ResponseEntity<ActividadDTO> create(@RequestBody final ActividadDTO actividadDTO, @PathVariable("id") final String id_monitor);
 
     @GetMapping(EndPointUris.ID + EndPointUris.MATERIAL)
     ResponseEntity<List<MaterialDTO>> getMaterialAct_proporcionados(@PathVariable final String id);

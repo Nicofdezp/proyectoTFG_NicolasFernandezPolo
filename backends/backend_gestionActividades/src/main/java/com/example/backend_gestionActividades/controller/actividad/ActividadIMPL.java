@@ -54,8 +54,8 @@ public class ActividadIMPL implements ActividadAPI {
     }
 
     @Override
-    public ResponseEntity<ActividadDTO> create(ActividadDTO actividadDTO) {
-        return new ResponseEntity<>(actividadService.create(actividadDTO), HttpStatus.CREATED);
+    public ResponseEntity<ActividadDTO> create(ActividadDTO actividadDTO, String id_monitor) {
+        return new ResponseEntity<>(actividadService.create(actividadDTO,id_monitor), HttpStatus.CREATED);
     }
 
     @Override

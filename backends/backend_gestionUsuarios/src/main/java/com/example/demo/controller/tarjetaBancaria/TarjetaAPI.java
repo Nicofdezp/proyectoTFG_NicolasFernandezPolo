@@ -6,7 +6,7 @@ import com.example.demo.model.usuario.UsuarioDTO;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-@RequestMapping(EndPointUris.API+EndPointUris.V1+EndPointUris.TARJETA)
+@RequestMapping(EndPointUris.TARJETA)
 public interface TarjetaAPI {
 
     @PostMapping()
