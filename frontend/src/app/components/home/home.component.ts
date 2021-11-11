@@ -11,14 +11,10 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-
-    let lista: any = document.querySelectorAll(".home-content-left-child");
-    console.log(lista)
-
   }
 
   hola() {
-    console.log(this.nombre)
+    console.log(this.nombre + " roberto chupapolla")
   }
 
 }

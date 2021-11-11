@@ -1,0 +1,8 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Datasource local storage ignored files
+/../../../../../../../../../../:\Users\nicof\OneDrive\Escritorio\repositorios_github\proyectoTFG_NicolasFernandezPolo\backends\backend_gestionActividades\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/

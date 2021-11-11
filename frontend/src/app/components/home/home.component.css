@@ -132,27 +132,6 @@ body{
 }
 
 
-.home-content .home-content-left .home-content-left-child img {
-
-    position: relative;
-
-    display: flex;
-    flex-wrap: wrap;
-    overflow: auto;
-
-    border-radius: 10px;
-    max-height: 100%;
-    max-width: 100%;
-    min-height: 100%;
-    min-width: 100%;
-    opacity: 0.5;
-
-
-    overflow: hidden;
-    background-size: cover;
-    background-position: center center;
-    
-}
 
 .home-content .home-content-left .home-content-left-child img:hover {
     opacity: 1;
@@ -167,16 +146,44 @@ PARTE DE LA DERECHA DEL FLEXBOX
 
 .home-content .home-content-right {
     width: 30%;
+    display: flex;
     color: #fff;
-    background: black;
+    background-image: url("/assets/resources/imgs/home_content_derecha.jpg");
     border-radius: 10px;
 	text-align: center;
 	padding: 20px;
+
+    background-position: center center;
+
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.home-content .home-content-right button {
-    width: 100%;    
+.home-content .home-content-right a {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    text-decoration: none;
 }
+
+.home-content .home-content-right .home-content-right-child-botones a .p-button-warning {
+    height: 22px;
+    width: 50%;
+    margin-left: 25%;
+}
+
+.home-content .home-content-right .home-content-right-child-botones .text-entreBotones{
+    font-weight: 700;
+    font-size: 15px;
+    margin-bottom: 2px;
+    -webkit-text-stroke: 0.8px black;
+}
+
+.home-content .home-content-right .home-content-right-child-botones a .p-button-secondary {
+    margin-bottom: 2px;
+    width: 100%;
+}
+
 
 
 .home-content .home-content-right .home-content-right-child {

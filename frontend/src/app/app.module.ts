@@ -6,16 +6,20 @@ import { SideBarComponent } from './components/side-bar/side-bar.component';
 import { ActividadesComponent } from './components/actividades/actividades.component';
 import { HomeComponent } from './components/home/home.component';
 
+import {ButtonModule} from 'primeng/button'
+
 @NgModule({
   declarations: [
     AppComponent,
     SideBarComponent,
     ActividadesComponent,
     HomeComponent,
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

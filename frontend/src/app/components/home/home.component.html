@@ -1,4 +1,3 @@
-
 <body>
 
     <h1>ACTIVIDADES IMPORTANTES</h1>
@@ -71,10 +70,21 @@
         <div class="home-content-right">
             
             <div class="home-content-right-child">
-                a
+                Hola que tal, <br>
+                bienvenidos a mi pagina golfa <br>
+                como estamos
             </div>
 
-            <button type="button" (click)="hola()" class="btn btn-success">Hacer cosas</button>
+            <div class="home-content-right-child-botones">
+                <a href="/login">
+                    <button pButton pRipple type="button" label="Login" class="p-button-secondary"></button>
+                </a>
+                <p class="text-entreBotones">No tienes cuenta?</p>
+                
+                <a href="/registro">
+                    <button pButton pRipple routerLink="/registro" type="button" label="Registrarse" class="p-button-warning" (click)="hola()"></button>
+                </a>
+            </div>
         </div>
     </div>
 </body>
