@@ -1,0 +1,78 @@
+
+<div class="sidebar close">
+    <div class="logo-details">
+        <i class='bx bx-compass' (click)="openSidebar()"></i>
+        <!-- <i class='bx bxs-pyramid'></i> -->
+        <span class="logo_name">WildExperience</span>
+    </div>
+
+    <ul class="nav-links">
+        <li>
+            <a routerLink="/home">
+                <i class='bx bx-home-alt'></i>
+                <span class="link_name">Home</span>
+            </a>
+
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="">Home</a></li>
+            </ul>
+        </li>
+        <li>
+            <a routerLink="#">
+                <i class='bx bx-user-pin' ></i>
+                <span class="link_name">Usuario</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="">Usuario</a></li>
+            </ul>
+        </li>
+        <li>
+            <div class="icon-link">
+                <a routerLink="/actividades">
+                    <i class='bx bx-run' ></i>
+                    <span class="link_name">Actividades</span>
+                </a>
+
+                <i class='bx bxs-chevron-down arrow' (click)="menuDesplegable($event)" ></i>
+            </div>
+
+            <ul class="sub-menu">
+                <li><a class="link_name" href="/actividades">Actividades</a></li>
+                <li><a href="">Escalada</a></li>
+                <li><a href="">Senderismo</a></li>
+                <li><a href="">Rafting</a></li>
+                <li><a href="">Escalada</a></li>
+            </ul>
+
+        </li>
+        <li>
+            <a routerLink="#">
+                <i class='bx bx-book-bookmark'></i>
+                <span class="link_name">Reservas</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="">Reservas</a></li>
+            </ul>
+        </li>
+        <li>
+
+            <div class="profile-details">
+                <div class="profile-content">
+                    <img src="/assets/resources/imgs/fotoperfil.jpg" alt="profile">
+                </div>
+                
+                <div class="name-job">
+                    <div class="name">Nicolas Fernandez</div>
+                    <div class="job">Pogramado</div>
+                </div>
+                <i class='bx bx-log-out' ></i>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<section class="home-section" (click)="openSidebar()">
+    <div class="home-content">
+        
+    </div>
+</section>

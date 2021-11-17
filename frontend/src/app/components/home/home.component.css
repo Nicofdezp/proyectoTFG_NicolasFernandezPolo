@@ -1,0 +1,229 @@
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+.linea {
+    margin-left: 7%;
+    min-width: calc(90% - 78px);
+    max-width: calc(90% - 78px);
+}
+
+h1 {
+    min-width: calc(90% - 78px);
+    max-width: calc(90% - 78px);
+    margin-left: 7%;
+    margin-bottom: -1%;
+}
+
+body{
+    margin-left: 78px;
+    margin-top: 7%;
+    overflow: auto;
+    
+}
+
+.home-content {
+    min-width: calc(90% - 78px);
+    max-width: calc(90% - 78px);
+    margin: auto;
+    padding: 40px 0;
+    display: flex;
+    gap: 20px;
+    
+}
+
+.home-content .home-content-left {
+    width: 70%;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.home-content .home-content-left .home-content-left-fondo {
+    display: flex;
+    position: relative;
+    background-color: black;
+    border-radius: 10px;
+    min-height: 200px;
+    max-height: 200px;
+    width: calc(33.33% - 20px);
+}
+
+.home-content .home-content-left .home-content-left-fondo a {
+    width: 100%;
+    text-decoration: none;
+
+    height: 100%;
+    width: 100%;
+    display: flex;
+    color: #fff;
+    font-weight: 600;
+    -webkit-text-stroke: 1px black;
+}
+
+.home-content .home-content-left .home-content-left-fondo a .left-child-text {
+    z-index: 1;
+    color: #fff;
+    opacity: 1;
+    height: 100%;
+    margin-left: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    pointer-events: none;
+   
+}
+
+.home-content .home-content-left .home-content-left-fondo a .left-child-text .text-up{
+    margin-top: 5%;
+    font-size: 26px;
+}
+
+.home-content .home-content-left .home-content-left-fondo a .left-child-text .text-down{
+    margin-bottom: 5%;
+    font-size: 20px;
+}
+
+.home-content .home-content-left .home-content-left-fondo a .home-content-left-child {
+    border-radius: 10px;
+    min-height: 100%;
+    max-height: 100%;
+
+    min-width: 100%;
+    max-width: 100%;
+    font-weight: bold;
+    opacity: 0.5;
+    background-image: url("/assets/resources/imgs/escalada.png");
+    display: flex;
+    position: absolute;
+    background-size: cover;
+    background-position: center center;
+    
+    transition: all 0.5s ease;
+}
+.home-content .home-content-left .home-content-left-fondo a .home-content-left-child:hover {
+    opacity: 1;
+}
+
+
+
+.home-content .home-content-left .home-content-left-fondo .home-content-left-child a .left-child-text{
+    height: 100%;
+    opacity: 1;
+    z-index: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.home-content .home-content-left-fondo a .left-child-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.home-content .home-content-left .home-content-left-fondo .home-content-left-child a:link {
+    text-decoration: none;
+}
+
+
+
+.home-content .home-content-left .home-content-left-child img:hover {
+    opacity: 1;
+}
+
+/*
+
+PARTE DE LA DERECHA DEL FLEXBOX 
+
+*/
+
+
+.home-content .home-content-right {
+    width: 30%;
+    min-height: 100%;
+    max-height: 100%;
+    display: flex;
+    color: #fff;
+    border-radius: 10px;
+    background-color: black;
+	text-align: center;
+    position: relative;
+    
+
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.home-content .home-content-right .imagen_fondo {
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 100%;
+    max-height: 100%;
+    background-image: url("/assets/resources/imgs/home_content_derecha.jpg");
+    filter: blur(2px);
+    background-position: center center;
+    border-radius: 10px;
+    position: absolute;
+    display: flex;
+    opacity: 0.7;
+    
+}
+
+.home-content .home-content-right .home-content-right-child-botones {
+    z-index: 1;
+    
+}
+
+.home-content .home-content-right .home-content-right-child-botones .linkLogin{
+    z-index: 1;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    text-decoration: none;
+}
+
+.home-content .home-content-right .home-content-right-child-botones .linkRegistro {
+    z-index: 1;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    margin-left: 25%;
+    text-decoration: none;
+}
+
+.home-content .home-content-right .home-content-right-child-botones a .p-button-warning {
+    height: 22px;
+    width: 100%;
+}
+
+.home-content .home-content-right .home-content-right-child-botones .text-entreBotones{
+    z-index: 2;
+    pointer-events: none;
+    font-weight: 700;
+    font-size: 15px;
+    margin-bottom: 2px;
+    -webkit-text-stroke: 0.8px black;
+}
+
+.home-content .home-content-right .home-content-right-child-botones a .p-button-secondary {
+    margin-bottom: -5%;
+    width: 100%;
+}
+
+
+
+.home-content .home-content-right .home-content-right-child {
+    margin-top: 20px;
+    width: 100%;
+    z-index: 1;
+    font-weight: 700;
+    -webkit-text-stroke: 0.8px black;
+    pointer-events: none;
+}

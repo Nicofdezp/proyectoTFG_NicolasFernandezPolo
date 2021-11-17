@@ -1,0 +1,26 @@
+<div class="contLog" >
+    <div class="cosas">
+        <p class="cuadroLog_logo"><i class='bx bx-compass'></i>WildExperience</p>
+    
+        <div class="formulario">
+            <form>
+                <div class="formulario_grupo">
+                    <i class='bx bx-user' ></i>
+                    <label class="etiqueta_usuario">Usuario:</label> <br/>
+                    <input class="txt_usuario" placeholder="Username" type="text" pInputText [(ngModel)]="user_name" name="user_name">
+                    
+                </div>
+    
+                <div class="formulario_grupo">
+                    <i class='bx bx-lock-alt' ></i>
+                    <label class="etiqueta_contra">Contraseña:</label> <br/>
+                    <input class="txt_usuario" placeholder="Password" type="password" pInputText [(ngModel)]="password" name="password">
+                </div>
+            </form>
+    
+            <button pButton pRipple type="button" label="Login" class="p-button-raised p-button-success" (click)="loguear()"></button>
+        </div>
+
+    </div>
+    
+</div>
