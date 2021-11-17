@@ -1,0 +1,21 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: config
+
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/Nicofdezp/servercloudconfig.git
+          force-pull: true
+          clone-on-start: true
+          default-label: main
+          repos:
+            local:
+              uri: https://github.com/Nicofdezp/servercloudconfig.git
+              force-pull: true
+              clone-on-start: true
+              default-label: main
