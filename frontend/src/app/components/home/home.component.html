@@ -57,7 +57,7 @@
                     </a>
             </div>
             <div class="home-content-left-fondo">
-                <a href="/actividades">
+                <a routerLink="/actividades">
                     <div class="home-content-left-child" >
                     </div>
                     <div class="left-child-text">
@@ -77,13 +77,13 @@
                 como estamos
             </div>
 
-            <div class="home-content-right-child-botones">
-                <a class="linkLogin" href="/login">
+            <div class="home-content-right-child-botones" *ngIf="!_user.localStorage.getItem('user')">
+                <a class="linkLogin" routerLink="/login">
                     <button pButton pRipple type="button" label="Login" class="p-button-secondary"></button>
                 </a>
                 <p class="text-entreBotones">No tienes cuenta?</p>
                 
-                <a class="linkRegistro" href="/registro">
+                <a class="linkRegistro" routerLink="/registro">
                     <button pButton pRipple routerLink="/registro" type="button" label="Registrarse" class="p-button-warning" (click)="hola()"></button>
                 </a>
             </div>

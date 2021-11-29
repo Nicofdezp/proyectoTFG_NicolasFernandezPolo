@@ -1,6 +1,9 @@
 <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 
-<app-side-bar></app-side-bar>
 
-<router-outlet></router-outlet>
+<router-outlet>
+    <div *ngIf="_user.localStorage.getItem('user')">
+        <app-side-bar></app-side-bar>
+    </div>
+</router-outlet>
 

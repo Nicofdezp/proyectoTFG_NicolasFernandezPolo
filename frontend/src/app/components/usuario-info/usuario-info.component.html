@@ -1,0 +1,95 @@
+<div class="contLog" >
+    <div class="cosas">
+        <p class="cuadroLog_logo"><i class='bx bx-user-circle' ></i>Información de Usuario</p>
+    
+        <div class="formulario">
+            <label class="label_top">Información general</label>
+            <hr class="linea_separadora">
+            <form>
+                <div class="formulario_grupo">
+                    <i class='bx bx-user' ></i>
+                    <label class="etiqueta_usuario">Usuario:</label> <br/>
+                    <label *ngIf="!modificar_usuario" class="etiqueta_info">{{_user.user.nombre_usuario}}</label>
+                    <input *ngIf="modificar_usuario" class="txt_usuario" placeholder="{{_user.user.nombre_usuario}}" [(ngModel)]="new_user_name" name="new_user_name" type="text" pInputText>
+                    
+                </div>
+
+                <div class="formulario_grupo">
+                    <i class='bx bx-mail-send' ></i>
+                    <label class="etiqueta_usuario">Correo Electrónico:</label> <br/>
+                    <label *ngIf="!modificar_usuario" class="etiqueta_info">{{_user.user.email}}</label>
+                    <input *ngIf="modificar_usuario" class="txt_usuario" placeholder="{{_user.user.email}}" [(ngModel)]="new_email" name="new_email" type="text" pInputText>
+                    
+                </div>
+
+                <div class="formulario_grupo">
+                    <i class='bx bx-user' ></i>
+                    <label class="etiqueta_usuario">Nombre Completo</label> <br/>
+                    <label *ngIf="!modificar_usuario" class="etiqueta_info">{{_user.user.nombre_completo}}</label>
+                    <input *ngIf="modificar_usuario" class="txt_usuario" placeholder="{{_user.user.nombre_completo}}" [(ngModel)]="new_user_fullname" name="new_user_fullname" type="text" pInputText>
+                    
+                </div>
+
+                <div class="formulario_grupo">
+                    <i class='bx bx-user' ></i>
+                    <label class="etiqueta_usuario">Fecha de nacimiento:</label> <br/>
+                    <label *ngIf="!modificar_usuario" class="etiqueta_info">{{_user.user.fecha_nacimiento}}</label>
+                    <p-calendar *ngIf="modificar_usuario" class="fecha_nacimiento" placeholder="{{_user.user.fecha_nacimiento}}" inputId="basic" [(ngModel)]="new_user_fecha" name="new_user_fecha"></p-calendar>
+
+                </div>
+                <button *ngIf="!modificar_usuario" pButton pRipple type="button" label="Modificar Datos" (click)="toggle_modificarDatos()" class="p-button-raised p-button-success modificar"></button>
+                <button *ngIf="modificar_usuario" pButton pRipple type="button" label="Aceptar" (click)="modificarDatos()" class="p-button-raised p-button-success aceptar"></button>
+                <button *ngIf="modificar_usuario" pButton pRipple type="button" label="Cancelar" (click)="toggle_modificarDatos()" class="p-button-raised p-button-success cancelar"></button>
+                
+            </form>
+
+            <label class="label_top_contra">Información Contraseña</label>
+            <hr class="linea_separadora">
+
+            <form>
+            
+                <div class="formulario_grupo">
+                    <i class='bx bx-lock-alt' ></i>
+                    <label class="etiqueta_usuario">Contraseña:</label> <br/>
+                    <label *ngIf="!contra_coincide" class="etiqueta_usuario">Las contraseñas no coinciden</label>
+                    <label *ngIf="!modificar_contra" class="etiqueta_info">.....................</label> <br/>
+                    <input *ngIf="modificar_contra" class="txt_usuario" placeholder="Contraseña" [(ngModel)]="new_password" name="new_password" type="password" pInputText>
+                    <br>
+                    <input *ngIf="modificar_contra"class="txt_usuario" placeholder="Repetir contraseña" [(ngModel)]="new_repeat_password" name="new_repeat_password" type="password" pInputText>
+                </div>
+
+                
+                <button *ngIf="!modificar_contra" pButton pRipple type="button" label="Modificar Datos" (click)="toggle_modificarContra()" class="p-button-raised p-button-success modificar"></button>
+                <button *ngIf="modificar_contra" pButton pRipple type="button" label="Aceptar" (click)="modificarContra()" class="p-button-raised p-button-success aceptar"></button>
+                <button *ngIf="modificar_contra" pButton pRipple type="button" label="Cancelar" (click)="toggle_modificarContra()" class="p-button-raised p-button-success cancelar"></button>
+                
+                
+            </form>
+            
+            <label class="label_top_contra">Información Contraseña</label>
+            <hr class="linea_separadora">
+
+            <form>
+            
+                <div class="formulario_grupo">
+                    <i class='bx bx-lock-alt' ></i>
+                    <label class="etiqueta_usuario">Tarjeta bancaria:</label> <br/>
+                    <label *ngIf="!modificar_tarjeta" class="etiqueta_info">{{_user.user.tarjeta_bancaria}}</label> <br/>
+                    <input *ngIf="modificar_tarjeta" class="txt_usuario" placeholder="Tarjeta Bancaria" type="String" [(ngModel)]="new_bankCard" pInputText>
+                    
+                </div>
+
+                <button *ngIf="!modificar_tarjeta" pButton pRipple type="button" label="Modificar Datos" (click)="toggle_modificarTarjeta()" class="p-button-raised p-button-success modificar"></button>
+                <button *ngIf="modificar_tarjeta" pButton pRipple type="button" label="Aceptar" (click)="modificarTarjeta()" class="p-button-raised p-button-success aceptar"></button>
+                <button *ngIf="modificar_tarjeta" pButton pRipple type="button" label="Cancelar" (click)="toggle_modificarTarjeta()" class="p-button-raised p-button-success cancelar"></button>
+                
+            </form>
+    
+        </div>
+
+    </div>
+    
+</div>
+
+<div class="footer"></div>
+

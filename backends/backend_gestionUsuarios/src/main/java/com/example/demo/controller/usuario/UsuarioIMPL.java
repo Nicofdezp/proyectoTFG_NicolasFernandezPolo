@@ -1,5 +1,7 @@
 package com.example.demo.controller.usuario;
 
+import com.example.demo.model.loginResponse.LoginResponse;
+import com.example.demo.model.loginResponse.LoginType;
 import com.example.demo.model.usuario.UsuarioDTO;
 import com.example.demo.service.usuario.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @CrossOrigin
@@ -16,6 +19,21 @@ public class UsuarioIMPL implements UsuarioAPI{
 
     @Autowired
     private UsuarioService usuarioService;
+
+    @Override
+    public ResponseEntity<LoginResponse> login(LoginType loginType) {
+        return new ResponseEntity<>(usuarioService.loginUsuario(loginType.getUser_name(), loginType.getPassword()), HttpStatus.CREATED);
+    }
+
+    @Override
+    public ResponseEntity<UsuarioDTO> cambiardatos(String id, Map<String, String> datos) {
+        return new ResponseEntity<>(usuarioService.cambiarDatos(id, datos), HttpStatus.ACCEPTED);
+    }
+
+    @Override
+    public ResponseEntity<UsuarioDTO> cambiarContra(String id, Map<String, String> password) {
+        return new ResponseEntity<>(usuarioService.cambiarContra(id, password), HttpStatus.ACCEPTED);
+    }
 
     @Override
     public ResponseEntity<List<UsuarioDTO>> getAll() {
@@ -54,10 +72,5 @@ public class UsuarioIMPL implements UsuarioAPI{
     @Override
     public ResponseEntity<UsuarioDTO> introducir_Tarjeta(String id_usuario, String num_tarjeta) {
         return ResponseEntity.ok(usuarioService.introducir_Tarjeta(id_usuario,num_tarjeta));
-    }
-
-    @Override
-    public ResponseEntity<String> getGenero_user(String id) {
-        return ResponseEntity.ok(usuarioService.getGenero_user(id));
     }
 }

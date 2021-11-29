@@ -16,8 +16,7 @@ public class UsuarioDTO {
     private String email;
     private String password;
     private String nombre_completo;
-    private Date fecha_nacimiento;
-    private String genero;
+    private String fecha_nacimiento;
     private String tarjeta_bancaria;
     private boolean trabajador;
 

@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RequestMapping()
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public interface ActividadAPI {
 
-    @GetMapping()
+    @GetMapping(EndPointUris.ACTIVIDADES)
     ResponseEntity<List<ActividadDTO>> getAll();
 
     @GetMapping(EndPointUris.ID)

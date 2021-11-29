@@ -1,0 +1,150 @@
+*{
+    /* overflow: hidden; */
+    font-family: 'Poppins', sans-serif;
+}
+
+.contLog{
+    display: flex;
+	align-items: center;
+	width: 50%;
+	margin-top: 300px;
+	background-color: #FF0000;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 15px;
+	
+	padding: 25px;
+
+	box-shadow: 4px 3px 8px 1px #191919AB;
+  	-webkit-box-shadow: 4px 3px 8px 1px #191919AB;
+}
+
+.contLog .cosas {
+	width: 100%;
+    min-height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.contLog .cosas .formulario {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	width: 100%;
+    min-height: 100%;
+}
+
+.bx {
+    color: #fff;
+    margin-right: 10px;
+	font-size: 20px;
+    margin-bottom: -2px;
+}
+
+
+
+.contLog .cosas .formulario .formulario_grupo {
+	margin-left: 10px;
+	width: 450px;
+	margin-top: 20px;
+}
+
+.contLog .cosas .formulario .formulario_grupo .etiqueta_usuario {
+    z-index: 1;
+    color: #fff;
+	margin-top: 20px;
+	font-size: 20px;
+	margin-bottom: 5px;
+	align-items: center;
+}
+
+.etiqueta_contra {
+    z-index: 1;
+    color: #fff;
+	margin-top: 20px;
+	font-size: 20px;
+	margin-bottom: 5px;
+}
+
+.txt_usuario{
+	margin-top: 10px;
+	width: 300px;
+    height: 50px;
+}
+
+.p-button-success{
+	background-color: #3CC202;
+	
+	padding: 2px;
+	margin-top: 15px;
+	width: 40%;
+	height: 40px;
+}
+
+
+.cuadroLog_logo {
+	color: #fff;
+	margin-top: 10px;
+	margin-bottom: 12px;
+	font-size: 60px;
+	font-weight: 600;
+}
+
+.bx-user-circle {
+	font-size: 55px;
+}
+
+.etiqueta_info {
+	z-index: 1;
+    color: #fff;
+	margin-top: 20px;
+	margin-left: 70px;
+	font-size: 30px;
+	margin-bottom: 5px;
+}
+
+.etiqueta_info_contra {
+	z-index: 1;
+    color: #fff;
+	margin-top: 10px;
+	margin-left: 50px;
+	font-size: 40px;
+	margin-bottom: 10px;
+}
+
+.label_top {
+	color: #fff;
+	font-size: 20px;
+	margin-right: 550px;
+}
+
+.label_top_contra {
+	color: #fff;
+	font-size: 20px;
+	margin-right: 550px;
+	margin-top: 30px;
+}
+
+.modificar {
+	margin-left: 95px;
+}
+
+.cancelar {
+	margin-left: 20px;
+}
+
+.linea_separadora {
+	width: 90%;
+}
+
+
+.footer{
+	background: #fff;
+	display: flex;
+	height: 30px;
+	margin-top: 80%;
+	
+}

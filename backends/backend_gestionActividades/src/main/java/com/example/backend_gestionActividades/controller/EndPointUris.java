@@ -13,7 +13,7 @@ public class EndPointUris {
     public static final String BORRAR = "/borrar";
 
     //ACTIVIDAD
-    public static final String ACTIVIDAD = "/actividad";
+    public static final String ACTIVIDADES = "/actividades";
 
     public static final String CREAR_ACTIVIDAD = "/crear_actividad";
 

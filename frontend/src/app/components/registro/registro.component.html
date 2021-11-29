@@ -1,1 +1,53 @@
-<p>registro works!</p>
+<div class="contLog" >
+    <div class="cosas">
+        <p class="cuadroLog_logo"><i class='bx bx-compass'></i>WildExperience</p>
+    
+        <div class="formulario">
+            <form>
+                <div class="formulario_grupo">
+                    <i class='bx bx-user' ></i>
+                    <label class="etiqueta_usuario">Nombre de Usuario:</label> <br/>
+                    <input class="txt_usuario" placeholder="Username" type="text" pInputText [(ngModel)]="user_name" name="user_name">
+                    
+                </div>
+                <div class="formulario_grupo">
+                    <i class='bx bx-mail-send'></i>
+                    <label class="etiqueta_usuario">Correo Electronico:</label> <br/>
+                    <input class="txt_usuario" placeholder="Username" type="email" pInputText [(ngModel)]="user_mail" name="user_mail">
+                    
+                </div>
+
+                <div class="formulario_grupo">
+                    <i class='bx bx-id-card' ></i>
+                    <label class="etiqueta_usuario">Nombre Completo:</label> <br/>
+                    <input class="txt_usuario" placeholder="Username" type="text" pInputText [(ngModel)]="user_name" name="user_name">
+                    
+                </div>
+
+                <div class="formulario_grupo">
+                    <i class='bx bx-user' ></i>
+                    <label class="etiqueta_usuario">Fecha Nacimiento:</label> <br/>
+                    <p-calendar class="fecha_nacimiento" inputId="basic" [(ngModel)]="user_fecha" name="user_fecha"></p-calendar>
+                </div>
+
+                <div class="formulario_grupo">
+                    <i class='bx bx-lock-alt' ></i>
+                    <label class="etiqueta_contra">Contraseña:</label> <br/>
+                    <input class="txt_usuario" placeholder="Password" type="password" pInputText [(ngModel)]="password" name="password">
+                </div>
+
+                <div class="formulario_grupo">
+                    <i class='bx bx-lock-alt' ></i>
+                    <label class="etiqueta_contra">Contraseña:</label> <br/>
+                    <input class="txt_usuario" placeholder="Password" type="password" pInputText [(ngModel)]="password" name="password">
+                </div>
+                
+
+            </form>
+    
+            <button pButton pRipple type="button" label="Resgistrarse" class="p-button-raised p-button-success" (click)="registrarse()"></button>
+        </div>
+
+    </div>
+    
+</div>

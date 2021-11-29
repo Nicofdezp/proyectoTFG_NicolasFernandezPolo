@@ -14,16 +14,16 @@
             </a>
 
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="">Home</a></li>
+                <li><a class="link_name" routerLink="">Home</a></li>
             </ul>
         </li>
         <li>
-            <a routerLink="#">
+            <a routerLink="/usuario">
                 <i class='bx bx-user-pin' ></i>
                 <span class="link_name">Usuario</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="">Usuario</a></li>
+                <li><a class="link_name" routerLink="">Usuario</a></li>
             </ul>
         </li>
         <li>
@@ -37,7 +37,7 @@
             </div>
 
             <ul class="sub-menu">
-                <li><a class="link_name" href="/actividades">Actividades</a></li>
+                <li><a class="link_name" routerLink="/actividades">Actividades</a></li>
                 <li><a href="">Escalada</a></li>
                 <li><a href="">Senderismo</a></li>
                 <li><a href="">Rafting</a></li>
@@ -51,9 +51,21 @@
                 <span class="link_name">Reservas</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="">Reservas</a></li>
+                <li><a class="link_name" routerLink="">Reservas</a></li>
             </ul>
         </li>
+
+        <li *ngIf="_user.user.trabajador">
+            <a routerLink="">
+                <i class='bx bx-book-bookmark'></i>
+                <span class="link_name">Cear Actividad</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a routerLink="" class="link_name">Cear Actividad</a></li>
+            </ul>
+        </li>
+
+
         <li>
 
             <div class="profile-details">
@@ -62,10 +74,10 @@
                 </div>
                 
                 <div class="name-job">
-                    <div class="name">Nicolas Fernandez</div>
-                    <div class="job">Pogramado</div>
+                    <div class="name">{{_user.user.nombre_usuario}}</div>
+                    
                 </div>
-                <i class='bx bx-log-out' ></i>
+                <i class='bx bx-log-out' (click)="logout()"></i>
             </div>
         </li>
     </ul>

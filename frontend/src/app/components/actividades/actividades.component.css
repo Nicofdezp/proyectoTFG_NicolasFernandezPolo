@@ -1,3 +1,21 @@
 *{
     margin-left: 78px;
 }
+
+.tabla {
+    display: flex;
+	align-items: center;
+	width: 57%;
+	/* height: 50%; */
+	background-color: #FF0000;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 15px;
+	
+	padding: 25px;
+
+	box-shadow: 4px 3px 8px 1px #191919AB;
+  	-webkit-box-shadow: 4px 3px 8px 1px #191919AB;
+}

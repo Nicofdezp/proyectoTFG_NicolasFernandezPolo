@@ -1,9 +1,17 @@
 package com.example.demo.service.usuario;
 
+import com.example.demo.model.loginResponse.LoginResponse;
 import com.example.demo.model.usuario.UsuarioDTO;
 import java.util.List;
+import java.util.Map;
 
 public interface UsuarioService {
+
+    LoginResponse loginUsuario(final String user_name, final String password);
+
+    UsuarioDTO cambiarContra(final String id, final Map<String, String> password);
+
+    UsuarioDTO cambiarDatos(final String id, final Map<String, String> datos);
 
     List<UsuarioDTO> getAll();
 
@@ -17,7 +25,6 @@ public interface UsuarioService {
 
     UsuarioDTO create(final UsuarioDTO usuarioDTO);
 
-    String getGenero_user(final String id);
 
     String getTarjeta_user(final String id);
 

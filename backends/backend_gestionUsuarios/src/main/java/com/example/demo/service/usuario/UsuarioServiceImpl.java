@@ -1,5 +1,6 @@
 package com.example.demo.service.usuario;
 
+import com.example.demo.model.loginResponse.LoginResponse;
 import com.example.demo.model.tarjeta_bancaria.TarjetaDTO;
 import com.example.demo.model.usuario.UsuarioDTO;
 import com.example.demo.repository.UsuarioRepository;
@@ -9,8 +10,9 @@ import com.example.demo.service.usuario.converter.Usuario_toVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.Objects;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
@@ -28,6 +30,45 @@ public class UsuarioServiceImpl implements UsuarioService {
 
     @Autowired
     private Usuario_toVO converter_toVO;
+
+    @Override
+    public LoginResponse loginUsuario(String user_name, String password) {
+
+        LoginResponse loginResponse = new LoginResponse();
+
+        UsuarioDTO usuarioDTO = this.getByUserName(user_name);
+
+        loginResponse.setSuccess(password.equals(usuarioDTO.getPassword()));
+        loginResponse.setUser(usuarioDTO);
+
+        return loginResponse;
+    }
+
+    @Override
+    public UsuarioDTO cambiarContra(String id, Map<String, String> password) {
+        UsuarioDTO usuarioDTO = converter_toDTO.convert(usuarioRepository.findById(id).get());
+
+        usuarioDTO.setPassword(password.get("password"));
+
+        return converter_toDTO.convert(usuarioRepository.save(converter_toVO.convert(usuarioDTO)));
+    }
+
+    @Override
+    public UsuarioDTO cambiarDatos(String id, Map<String, String> datos) {
+        UsuarioDTO usuarioDTO = converter_toDTO.convert(usuarioRepository.findById(id).get());
+
+        usuarioDTO.setNombre_usuario(datos.get("nombre_usuario"));
+        usuarioDTO.setEmail(datos.get("email"));
+        usuarioDTO.setNombre_completo(datos.get("nombre_completo"));
+
+        System.out.println(datos.get("fecha_nacimiento"));
+        usuarioDTO.setFecha_nacimiento(datos.get("fecha_nacimiento").split(" ")[0]);
+
+
+
+
+        return converter_toDTO.convert(usuarioRepository.save(converter_toVO.convert(usuarioDTO)));
+    }
 
     @Override
     public List<UsuarioDTO> getAll() {
@@ -118,14 +159,6 @@ public class UsuarioServiceImpl implements UsuarioService {
         }catch (Exception e) {
             return usuarioDTO;
         }
-    }
-
-    @Override
-    public String getGenero_user(String id) {
-
-        UsuarioDTO usuarioDTO = converter_toDTO.convert(usuarioRepository.findById(id).get());
-
-        return usuarioDTO.getGenero();
     }
 
     @Override

@@ -18,7 +18,6 @@ public class Usuario_toDTO implements Converter<UsuarioVO, UsuarioDTO> {
                 .password(usuario.getPassword())
                 .nombre_completo(usuario.getNombre_completo())
                 .fecha_nacimiento(usuario.getFecha_nacimiento())
-                .genero(usuario.getGenero())
                 .tarjeta_bancaria(usuario.getTarjeta_bancaria())
                 .trabajador(usuario.isTrabajador())
                 .build();
