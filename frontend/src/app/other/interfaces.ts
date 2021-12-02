@@ -4,8 +4,7 @@ export interface UsuarioModel {
     email: String;
     password: String;
     nombre_completo: String;
-    fecha_nacimiento: Date;
-    genero: String;
+    fecha_nacimiento: String;
     tarjeta_bancaria: String;
     trabajador: boolean;
 }
@@ -28,12 +27,23 @@ export interface ActividadModel {
     tipo_actividad: String;
     descripcion: String;
     dificultad: String;
-    materiales_proporcionados: Array<String>;
-    materiales_necesarios: Array<String>;
-    fecha_inicio: Date;
-    fecha_fin: Date;
+    materiales_proporcionados: Array<MaterialModel>;
+    materiales_necesarios: Array<MaterialModel>;
+    fecha_inicio: String;
+    fecha_final: String;
     precio: number;
     capacidad_minima: number;
     capacidad_maxima: number;
     capacidad_monitor: number;
+}
+
+export interface MaterialModel {
+    id: String;
+    nombre_material: String;
+}
+
+export interface TipoReserva {
+    id: String;
+    nombre_actividad: String;
+    estado_reserva: String;
 }

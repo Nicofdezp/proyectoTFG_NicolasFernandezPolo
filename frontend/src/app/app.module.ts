@@ -21,6 +21,9 @@ import { RegistroComponent } from './components/registro/registro.component';
 import { Constantes } from './other/constantes';
 import { UsuarioInfoComponent } from './components/usuario-info/usuario-info.component';
 import { CrearActividadComponent } from './components/crear-actividad/crear-actividad.component';
+import { ActividadDetalleComponent } from './components/actividad-detalle/actividad-detalle.component';
+import { ReservasComponent } from './components/reservas/reservas.component';
+import { CrearTrabajorComponent } from './components/crear-trabajor/crear-trabajor.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +35,9 @@ import { CrearActividadComponent } from './components/crear-actividad/crear-acti
     RegistroComponent,
     UsuarioInfoComponent,
     CrearActividadComponent,
+    ActividadDetalleComponent,
+    ReservasComponent,
+    CrearTrabajorComponent,
     
   ],
   imports: [

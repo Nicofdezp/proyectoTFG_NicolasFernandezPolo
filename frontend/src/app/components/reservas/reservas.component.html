@@ -1,0 +1,36 @@
+<div class="cont_Acts">
+    
+    <p class="texto_Tabla">
+        RESERVAS ACTUALES
+    </p>
+
+    <hr class="lineadivisoria">
+    
+    <p-table *ngIf="_reserva.listadoReservasUsuario" class="tabla" [columns]="cols" [value]="_reserva.listadoReservasUsuario" responsiveLayout="scroll" selectionMode="single" [(selection)]="reservaSelected" dataKey="id_actividad">
+        <ng-template pTemplate="header" let-columns>
+            <tr>
+                <th *ngFor="let col of columns">
+                    {{col.header}}
+                </th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-rowData let-columns="columns">
+            <tr [pSelectableRow]="rowData">
+                <td *ngFor="let col of columns">
+                    {{rowData[col.field]}}
+                </td>
+            </tr>
+        </ng-template>
+        
+    </p-table>
+
+    <p *ngIf="!_reserva.listadoReservasUsuario" class="mensajeError">NO HAY RESERVAS POR EL MOMENTO</p>
+
+    <div class="botonesBajos">
+        <button [disabled]="!pagoCheck()" pButton pRipple (click)="_reserva.realizarPago()" type="button" label="Realizar Pago" class="p-button-success botonAceptarAct">
+            <i *ngIf="pagoCheck()" class='bx bx-credit-card-alt bx-tada iconoboton' ></i>
+        
+        </button>
+    </div>
+
+</div>

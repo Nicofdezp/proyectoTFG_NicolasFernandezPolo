@@ -1,19 +1,38 @@
-<p-table class="tabla" [columns]="cols" [value]="_activity.listadoActividades" responsiveLayout="scroll" selectionMode="single" [(selection)]="actividadSelected" dataKey="code">
-    <ng-template pTemplate="header" let-columns>
-        <tr>
-            <th *ngFor="let col of columns">
-                {{col.header}}
-            </th>
-        </tr>
-    </ng-template>
-    <ng-template pTemplate="body" let-rowData let-columns="columns">
-        <tr [pSelectableRow]="rowData.id">
-            <td *ngFor="let col of columns">
-                {{rowData[col.field]}}
-            </td>
-        </tr>
-    </ng-template>
+<div class="cont_Acts">
     
-</p-table>
+    <p class="texto_Tabla">
+        ACTIVIDADES ACTUALES
+    </p>
 
-<button>cosaasdasdasdasdasdasdasaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</button>
+    <hr class="lineadivisoria">
+    
+    <p-table *ngIf="_activity.listadoActividades" class="tabla" [columns]="cols" [value]="_activity.listadoActividades" responsiveLayout="scroll" selectionMode="single" [(selection)]="actividadSelected" dataKey="id">
+        <ng-template pTemplate="header" let-columns>
+            <tr>
+                <th *ngFor="let col of columns">
+                    {{col.header}}
+                </th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-rowData let-columns="columns">
+            <tr [pSelectableRow]="rowData">
+                <td *ngFor="let col of columns">
+                    {{rowData[col.field]}}
+                </td>
+            </tr>
+        </ng-template>
+        
+    </p-table>
+
+    <p *ngIf="!_activity.listadoActividades" class="mensajeError">NO HAY ACTIVIDADES POR EL MOMENTO</p>
+
+    <div class="botonesBajos">
+        <button [disabled]="!actividadSelected" pButton pRipple (click)="selectActivity()" type="button" label="Más Información" class="p-button-success botonAceptarAct">
+            <i *ngIf="actividadSelected" class='bx bx-run bx-tada iconoboton' ></i>
+        </button>
+
+        <button *ngIf="!_user.user" pButton pRipple (click)="cancelar()" type="button" label="Cancelar" class="p-button-secondary botonAceptarAct"></button>
+    </div>
+
+</div>
+

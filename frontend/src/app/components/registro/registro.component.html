@@ -13,14 +13,14 @@
                 <div class="formulario_grupo">
                     <i class='bx bx-mail-send'></i>
                     <label class="etiqueta_usuario">Correo Electronico:</label> <br/>
-                    <input class="txt_usuario" placeholder="Username" type="email" pInputText [(ngModel)]="user_mail" name="user_mail">
+                    <input class="txt_usuario" placeholder="Correo Electronico" type="email" pInputText [(ngModel)]="user_mail" name="user_mail">
                     
                 </div>
 
                 <div class="formulario_grupo">
                     <i class='bx bx-id-card' ></i>
                     <label class="etiqueta_usuario">Nombre Completo:</label> <br/>
-                    <input class="txt_usuario" placeholder="Username" type="text" pInputText [(ngModel)]="user_name" name="user_name">
+                    <input class="txt_usuario" placeholder="Nombre Completo" type="text" pInputText [(ngModel)]="user_complete_name" name="user_complete_name">
                     
                 </div>
 
@@ -38,14 +38,19 @@
 
                 <div class="formulario_grupo">
                     <i class='bx bx-lock-alt' ></i>
-                    <label class="etiqueta_contra">Contraseña:</label> <br/>
-                    <input class="txt_usuario" placeholder="Password" type="password" pInputText [(ngModel)]="password" name="password">
+                    <label class="etiqueta_contra">Repetir Contraseña:</label> <br/>
+                    <input class="txt_usuario" placeholder="Password" type="password" pInputText [(ngModel)]="repeat_password" name="repeat_password">
                 </div>
                 
+                <p *ngIf="!contraCorrecta" class="txtContraIncorrecta">Las contraseñas no coinciden</p>
 
             </form>
-    
-            <button pButton pRipple type="button" label="Resgistrarse" class="p-button-raised p-button-success" (click)="registrarse()"></button>
+
+            <div class="botonesBajos">
+                <button pButton pRipple (click)="cancelar()" type="button" label="Cancelar" class="p-button-secondary botonAceptarAct"></button>
+                <button pButton pRipple type="button" label="Resgistrarse" class="p-button-success botonAceptarAct" (click)="registrarse()"></button>
+            </div>
+            
         </div>
 
     </div>

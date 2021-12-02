@@ -1,6 +1,7 @@
 package com.example.backend_gestionReservas.service;
 
 import com.example.backend_gestionReservas.model.ReservaDTO;
+import com.example.backend_gestionReservas.model.TipoReserva;
 import com.example.backend_gestionReservas.repository.ReservaRepository;
 import com.example.backend_gestionReservas.service.converter.Reserva_toDTO;
 import com.example.backend_gestionReservas.service.converter.Reserva_toVO;
@@ -90,9 +91,28 @@ public class ReservaServiceImpl implements ReservaService{
     }
 
     @Override
+    public String getNombreActividabyId(String id_reserva) {
+        String baseURL2 = "http://localhost:8085/actividad/"+this.getById(id_reserva).getId_actividad();
+
+        RestTemplate restTemplate = new RestTemplate();
+        String nombre_actividad="", datos_actividad;
+
+        try {
+            datos_actividad = restTemplate.getForObject(baseURL2, String.class);
+
+            JSONObject act = (JSONObject) XML.toJSONObject(datos_actividad).get("ActividadDTO");
+            nombre_actividad = act.get("nombre_actividad").toString();
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return nombre_actividad;
+    }
+
+    @Override
     public ReservaDTO realizarPago(String id_actividad, String id_usuario) {
 
-        String baseURL = "http://localhost:8085/usuario/"+id_usuario;
+        String baseURL = "http://localhost:8085/usuario/id/"+id_usuario;
         String baseURL2 = "http://localhost:8085/actividad/"+id_actividad;
 
         ReservaDTO reservaDTO = getRerserva_byActivity(id_actividad);
@@ -214,8 +234,27 @@ public class ReservaServiceImpl implements ReservaService{
     }
 
     @Override
-    public List<ReservaDTO> getReservas_usuario(String id_usuario) {
-        return null;
+    public List<TipoReserva> getReservas_usuario(String id_usuario) {
+        List<ReservaDTO> listaReservas = this.getAll();
+        List<TipoReserva> reservasUsuario = new ArrayList<>();
+
+
+        for(ReservaDTO reservaDTO : listaReservas) {
+            for(String codigoUsuario_final : reservaDTO.getPersonas_finales()) {
+                if(codigoUsuario_final.equals(id_usuario)) {
+                    reservasUsuario.add(new TipoReserva(reservaDTO.getId_actividad(),this.getNombreActividabyId(reservaDTO.getId()),"pagado"));
+                }
+            }
+
+            for(String codigoUsuario_reserva : reservaDTO.getPersonas_reserva()) {
+                if(codigoUsuario_reserva.equals(id_usuario)) {
+                    reservasUsuario.add(new TipoReserva(reservaDTO.getId_actividad(),this.getNombreActividabyId(reservaDTO.getId()),"sin pagar"));
+                }
+            }
+        }
+
+
+        return reservasUsuario;
     }
 
     @Override

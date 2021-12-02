@@ -26,4 +26,10 @@ public interface ActividadService {
     boolean deleteAll_proporcinados(final String id);
 
     boolean deleteById_proporcionados(final String id, final String id_mat);
+
+    List<MaterialDTO> getMaterialAct_necesarios(final String id);
+
+    boolean deleteAll_necesarios(final String id);
+
+    boolean deleteById_necesarios(final String id, final String id_mat);
 }

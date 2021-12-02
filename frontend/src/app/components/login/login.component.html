@@ -18,7 +18,11 @@
                 </div>
             </form>
     
-            <button pButton pRipple type="button" label="Login" class="p-button-raised p-button-success" (click)="loguear()"></button>
+            <div class="botonesBajos">
+                <button pButton pRipple type="button" label="Login" class="p-button-success botonAceptarAct" (click)="loguear()"></button>    
+                <button pButton pRipple (click)="cancelar()" type="button" label="Cancelar" class="p-button-secondary botonAceptarAct"></button>
+            </div>
+            
         </div>
 
     </div>

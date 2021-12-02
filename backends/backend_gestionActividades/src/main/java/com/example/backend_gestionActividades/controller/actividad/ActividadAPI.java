@@ -25,7 +25,7 @@ public interface ActividadAPI {
     @GetMapping(EndPointUris.DIFICULTAD_ACTIVIDAD + EndPointUris.DIFICULTAD_ACTIVIDAD_VAR)
     ResponseEntity<List<ActividadDTO>> getByDificult(@PathVariable final String dificultad_actividad);
 
-    @DeleteMapping()
+    @DeleteMapping(EndPointUris.ACTIVIDADES)
     ResponseEntity<Boolean> deleteAll();
 
     @DeleteMapping(EndPointUris.BORRAR + EndPointUris.ID)
@@ -34,13 +34,22 @@ public interface ActividadAPI {
     @PostMapping(EndPointUris.CREAR_ACTIVIDAD + EndPointUris.ID)
     ResponseEntity<ActividadDTO> create(@RequestBody final ActividadDTO actividadDTO, @PathVariable("id") final String id_monitor);
 
-    @GetMapping(EndPointUris.ID + EndPointUris.MATERIAL)
+    @GetMapping(EndPointUris.ID + EndPointUris.MATERIALPROPORCIONADO)
     ResponseEntity<List<MaterialDTO>> getMaterialAct_proporcionados(@PathVariable final String id);
 
-    @PutMapping(EndPointUris.ID + EndPointUris.MATERIAL)
+    @PutMapping(EndPointUris.ID + EndPointUris.MATERIALPROPORCIONADO)
     ResponseEntity<Boolean> deleteAll_proporcionados(@PathVariable final String id);
 
-    @PutMapping(EndPointUris.ID + EndPointUris.MATERIAL + EndPointUris.ID2)
+    @PutMapping(EndPointUris.ID + EndPointUris.MATERIALPROPORCIONADO + EndPointUris.ID2)
     ResponseEntity<Boolean> deleteById_proporcinado(@PathVariable("id") final String id, @PathVariable("id2") final String id_mat);
+
+    @GetMapping(EndPointUris.ID + EndPointUris.MATERIALNECESARIO)
+    ResponseEntity<List<MaterialDTO>> getMaterialAct_necesarios(@PathVariable final String id);
+
+    @PutMapping(EndPointUris.ID + EndPointUris.MATERIALNECESARIO)
+    ResponseEntity<Boolean> deleteAll_necesarios(@PathVariable final String id);
+
+    @PutMapping(EndPointUris.ID + EndPointUris.MATERIALNECESARIO + EndPointUris.ID2)
+    ResponseEntity<Boolean> deleteById_necesarios(@PathVariable("id") final String id, @PathVariable("id2") final String id_mat);
 
 }

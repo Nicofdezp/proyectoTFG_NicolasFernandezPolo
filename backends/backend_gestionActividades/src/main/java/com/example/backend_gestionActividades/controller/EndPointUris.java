@@ -26,7 +26,8 @@ public class EndPointUris {
     public static final String DIFICULTAD_ACTIVIDAD_VAR = "/{dificultad_actividad}";
 
     //MATERIAL
+    public static final String MATERIALNECESARIO = "/material_necesario";
     public static final String MATERIAL = "/material";
-
     public static final String CREAR_MATERIAL = "/crear_material";
+    public static final String MATERIALPROPORCIONADO = "/material_proporcionado";
 }

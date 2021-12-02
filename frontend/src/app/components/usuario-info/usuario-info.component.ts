@@ -19,7 +19,7 @@ export class UsuarioInfoComponent implements OnInit {
   new_user_name !: String;
   new_email !: String;
   new_user_fullname !: String;
-  new_user_fecha !: Date;
+  new_user_fecha !: String;
   new_genero !: String;
 
   //variables para modificar la contraseña
@@ -72,7 +72,7 @@ export class UsuarioInfoComponent implements OnInit {
     let nombre_usuario: String;
     let email: String;
     let nombre_completo: String;
-    let fecha_nacimiento: Date;
+    let fecha_nacimiento: String;
 
     if(this.new_user_name === undefined || this.new_user_name.length === 0) {
       nombre_usuario = this._user.user.nombre_usuario

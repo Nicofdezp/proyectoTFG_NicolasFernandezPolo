@@ -46,22 +46,32 @@
 
         </li>
         <li>
-            <a routerLink="#">
+            <a routerLink="/reservas">
                 <i class='bx bx-book-bookmark'></i>
                 <span class="link_name">Reservas</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" routerLink="">Reservas</a></li>
+                <li><a class="link_name" routerLink="/reservas">Reservas</a></li>
             </ul>
         </li>
 
         <li *ngIf="_user.user.trabajador">
-            <a routerLink="">
+            <a routerLink="/crearActividad">
                 <i class='bx bx-book-bookmark'></i>
                 <span class="link_name">Cear Actividad</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a routerLink="" class="link_name">Cear Actividad</a></li>
+                <li><a routerLink="/crearActividad" class="link_name">Cear Actividad</a></li>
+            </ul>
+        </li>
+
+        <li *ngIf="_user.user.trabajador">
+            <a routerLink="/crearTrabajador">
+                <i class='bx bx-user' ></i>
+                <span class="link_name">Cear Trabajador</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a routerLink="/crearTrabajador" class="link_name">Cear Trabajador</a></li>
             </ul>
         </li>
 

@@ -75,13 +75,11 @@
     height: 50px;
 }
 
-.p-button-success{
-	background-color: #3CC202;
-	
-	padding: 2px;
-	margin-top: 15px;
-	width: 40%;
-	height: 40px;
+.txtContraIncorrecta {
+	color: #fff;
+	margin-top: 20px;
+	font-size: 22px;
+	font-weight: 400;
 }
 
 
@@ -96,4 +94,17 @@
 .bx-compass {
 	font-size: 70px;
 	
+}
+
+.botonesBajos {
+	align-items: center;
+	flex-direction: row;
+	width: 100%;
+	margin-top: 20px;
+	display: flex;
+}
+
+.botonAceptarAct{
+	margin-right: 50px;
+	width: 60%;
 }

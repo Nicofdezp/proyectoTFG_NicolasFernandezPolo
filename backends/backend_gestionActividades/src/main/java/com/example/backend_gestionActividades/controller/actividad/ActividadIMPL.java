@@ -76,4 +76,23 @@ public class ActividadIMPL implements ActividadAPI {
                 ? ResponseEntity.ok(true)
                 : new ResponseEntity<>(false, HttpStatus.NOT_FOUND);
     }
+
+    @Override
+    public ResponseEntity<List<MaterialDTO>> getMaterialAct_necesarios(String id) {
+        return ResponseEntity.ok(actividadService.getMaterialAct_necesarios(id));
+    }
+
+    @Override
+    public ResponseEntity<Boolean> deleteAll_necesarios(String id) {
+        return actividadService.deleteAll_necesarios(id)
+                ? ResponseEntity.ok(true)
+                : new ResponseEntity<>(false, HttpStatus.NOT_FOUND);
+    }
+
+    @Override
+    public ResponseEntity<Boolean> deleteById_necesarios(String id, String id_mat) {
+        return actividadService.deleteById_necesarios(id, id_mat)
+                ? ResponseEntity.ok(true)
+                : new ResponseEntity<>(false, HttpStatus.NOT_FOUND);
+    }
 }

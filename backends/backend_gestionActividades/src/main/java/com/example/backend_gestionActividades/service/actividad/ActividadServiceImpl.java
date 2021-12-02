@@ -126,17 +126,12 @@ public class ActividadServiceImpl implements ActividadService {
     @Override
     public List<MaterialDTO> getMaterialAct_proporcionados(String id) {
 
-        ActividadDTO actividadDTO = converterAct_toDTO.convert(actividadRepository.findById(id).get());
+        ActividadDTO actividadDTO = this.getById(id);
 
         List<MaterialDTO> aux = new ArrayList<>();
 
         for (String codigo_act : actividadDTO.getMateriales_proporcionados()) {
             aux.add(materialService.getById(codigo_act));
-        }
-
-
-        for (MaterialDTO a : aux) {
-            System.out.println(a.toString());
         }
 
         return aux;
@@ -145,7 +140,7 @@ public class ActividadServiceImpl implements ActividadService {
     @Override
     public boolean deleteAll_proporcinados(String id) {
 
-        ActividadDTO actividadDTO = converterAct_toDTO.convert(actividadRepository.findById(id).get());
+        ActividadDTO actividadDTO = this.getById(id);
 
         try {
             actividadDTO.getMateriales_proporcionados().clear();
@@ -159,11 +154,51 @@ public class ActividadServiceImpl implements ActividadService {
     @Override
     public boolean deleteById_proporcionados(String id, String id_mat) {
 
-        ActividadDTO actividadDTO = converterAct_toDTO.convert(actividadRepository.findById(id).get());
-
+        ActividadDTO actividadDTO = this.getById(id);
 
         try {
             actividadDTO.getMateriales_proporcionados().remove(id_mat);
+
+            actividadRepository.save(converterAct_toVO.convert(actividadDTO));
+            return Boolean.TRUE;
+        } catch (Exception e) {
+            return Boolean.FALSE;
+        }
+    }
+
+    @Override
+    public List<MaterialDTO> getMaterialAct_necesarios(String id) {
+        ActividadDTO actividadDTO = this.getById(id);
+
+        List<MaterialDTO> aux = new ArrayList<>();
+
+        for (String codigo_act : actividadDTO.getMateriales_necesarios()) {
+            aux.add(materialService.getById(codigo_act));
+        }
+
+        return aux;
+    }
+
+    @Override
+    public boolean deleteAll_necesarios(String id) {
+
+        ActividadDTO actividadDTO = this.getById(id);
+
+        try {
+            actividadDTO.getMateriales_necesarios().clear();
+            actividadRepository.save(converterAct_toVO.convert(actividadDTO));
+            return Boolean.TRUE;
+        } catch (Exception e) {
+            return Boolean.FALSE;
+        }
+    }
+
+    @Override
+    public boolean deleteById_necesarios(String id, String id_mat) {
+        ActividadDTO actividadDTO = this.getById(id);
+
+        try {
+            actividadDTO.getMateriales_necesarios().remove(id_mat);
 
             actividadRepository.save(converterAct_toVO.convert(actividadDTO));
             return Boolean.TRUE;

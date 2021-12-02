@@ -1,0 +1,98 @@
+<div class="contenidoAct">
+
+    <div class="txtcabecera">
+        <p class="txtCabecera">Información de la Actividad</p>
+    </div>
+
+    <p class="subtituloseccion">Información Basica</p>
+    <hr class="lineaSeparadora2">
+
+    <div class="infoVaria">
+        <p class="txtInfo">- Nombre de la Actividad: {{this._activity.activdadSelected.nombre_actividad}}</p>
+        <p class="txtInfo">- Tipo de Actividad: {{this._activity.activdadSelected.tipo_actividad}}</p>
+        <p class="txtInfo">- Descripción de la Actividad: {{this._activity.activdadSelected.descripcion}}</p>
+        <p class="txtInfo">- Dificultad de la Actividad: {{this._activity.activdadSelected.dificultad}}</p>
+        <p class="txtInfo">- Fecha inicio de la Actividad: {{this._activity.activdadSelected.fecha_inicio}}</p>
+        <p class="txtInfo">- Fecha fin de la Actividad: {{this._activity.activdadSelected.fecha_final}}</p>
+    </div>
+
+    <hr class="lineaSeparadora2">
+
+    <div class="contenidoTablas">
+
+        <div class="tabla">
+
+            <p class="txtCabeceraTabla">Materiales Proporcionados</p>
+
+            <hr class="lineaSeparadora">
+
+            <p *ngIf="!_activity.listadoMateriales_proporcionados" class="txtAviso">NO SE PROPORCIONAN MATERIALES</p>
+
+            <p-table *ngIf="_activity.listadoMateriales_proporcionados" [columns]="cols" [value]="_activity.listadoMateriales_proporcionados" responsiveLayout="scroll">
+                <ng-template pTemplate="header" let-columns>
+                    <tr>
+                        <th *ngFor="let col of columns">
+                            {{col.header}}
+                        </th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-rowData let-columns="columns">
+                    <tr>
+                        <td *ngFor="let col of columns">
+                            {{rowData[col.field]}}
+                        </td>
+                    </tr>
+                </ng-template>
+                
+            </p-table>
+        </div>
+
+        <div class="tabla">
+
+            <p class="txtCabeceraTabla">Materiales Necesarios</p>
+
+            <hr class="lineaSeparadora">
+
+            <p *ngIf="!_activity.listadoMateriales_necesarios" class="txtAviso">NO ES NECESARIO TRAER MATERIAL</p>
+
+            <p-table *ngIf="_activity.listadoMateriales_necesarios" [columns]="cols" [value]="_activity.listadoMateriales_necesarios" responsiveLayout="scroll">
+                <ng-template pTemplate="header" let-columns>
+                    <tr>
+                        <th *ngFor="let col of columns">
+                            {{col.header}}
+                        </th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-rowData let-columns="columns">
+                    <tr [pSelectableRow]="rowData">
+                        <td *ngFor="let col of columns">
+                            {{rowData[col.field]}}
+                        </td>
+                    </tr>
+                </ng-template>
+                
+            </p-table>
+        </div>
+    </div>
+
+    <hr class="lineaSeparadora2">
+
+    <div class="infoVaria">
+        <p class="txtInfo">- Numero de personas reservadas de la Actividad: {{this._reserva.numerogentereserva}} / {{this._activity.activdadSelected.capacidad_maxima}}</p>
+        <p class="txtInfo">- Numero de personas pagadas de la Actividad: {{this._reserva.numerogentefinal}} / {{this._activity.activdadSelected.capacidad_maxima}}</p>
+        <p class="txtInfo">- Numero de monitores que asisten a la Actividad: {{this._reserva.numeromonitores}}</p>
+        <p class="txtInfo">- Precio de la Actividad: {{this._activity.activdadSelected.precio}}€</p>
+    </div>
+
+
+    <div class="botonesBajos">
+        <button pButton pRipple (click)="cancelar()" type="button" label="Cancelar" class="p-button-secondary botonAceptarAct">
+            <i class='bx bx-sad iconoboton' ></i>
+        </button>
+        <button [disabled]="!_user.user" pButton pRipple (click)="hacerReserva()" type="button" label="Reservar" class="p-button-success botonAceptarAct">
+            <i class='bx bx-run bx-tada iconoboton' ></i>
+        </button>
+    </div>
+</div>
+
+<div class="footer"></div>

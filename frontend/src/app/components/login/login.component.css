@@ -7,7 +7,7 @@
     display: flex;
 	align-items: center;
 	width: 50%;
-	height: 50%;
+	height: 55%;
 	background-color: #FF0000;
 	position: absolute;
 	left: 50%;
@@ -69,16 +69,6 @@
     height: 50px;
 }
 
-.p-button-success{
-	background-color: #3CC202;
-	
-	padding: 2px;
-	margin-top: 15px;
-	width: 40%;
-	height: 40px;
-}
-
-
 .cuadroLog_logo {
 	color: #fff;
 	margin-top: 10px;
@@ -89,5 +79,18 @@
 
 .bx-compass {
 	font-size: 70px;
-	
+}
+
+.botonesBajos {
+	align-items: center;
+	flex-direction: column;
+	width: 100%;
+	margin-top: 20px;
+	display: flex;
+}
+
+.botonAceptarAct{
+	margin-top: 10px;
+	margin-right: 20px;
+	width: 40%;
 }

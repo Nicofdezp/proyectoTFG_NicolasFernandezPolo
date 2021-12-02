@@ -1,0 +1,110 @@
+*{
+    /* overflow: hidden; */
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.fecha_nacimiento {
+	z-index: 10000000;
+}
+
+
+.contLog{
+    display: flex;
+	align-items: center;
+	width: 50%;
+	/* height: 50%; */
+	background-color: #FF0000;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 15px;
+	
+	padding: 25px;
+
+	box-shadow: 4px 3px 8px 1px #191919AB;
+  	-webkit-box-shadow: 4px 3px 8px 1px #191919AB;
+}
+
+.contLog .cosas {
+	width: 100%;
+    min-height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.contLog .cosas .formulario {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	width: 100%;
+    min-height: 100%;
+}
+
+.bx {
+    color: #fff;
+    margin-right: 10px;
+	font-size: 20px;
+    margin-bottom: -2px;
+}
+
+.contLog .cosas .formulario .formulario_grupo {
+	margin-top: 20px;
+}
+
+.contLog .cosas .formulario .formulario_grupo .etiqueta_usuario {
+    z-index: 1;
+    color: #fff;
+	margin-top: 20px;
+	font-size: 20px;
+	margin-bottom: 5px;
+}
+
+.etiqueta_contra {
+    z-index: 1;
+    color: #fff;
+	margin-top: 20px;
+	font-size: 20px;
+	margin-bottom: 5px;
+}
+
+.txt_usuario{
+	width: 300px;
+    height: 50px;
+}
+
+.txtContraIncorrecta {
+	color: #fff;
+	margin-top: 20px;
+	font-size: 22px;
+	font-weight: 400;
+}
+
+
+.cuadroLog_logo {
+	color: #fff;
+	margin-top: 10px;
+	margin-bottom: 12px;
+	font-size: 80px;
+	font-weight: 600;
+}
+
+.bx-compass {
+	font-size: 70px;
+	
+}
+
+.botonesBajos {
+	align-items: center;
+	flex-direction: row;
+	width: 100%;
+	margin-top: 20px;
+	display: flex;
+}
+
+.botonAceptarAct{
+	margin-right: 50px;
+	width: 60%;
+}

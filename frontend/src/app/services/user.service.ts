@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Usuario } from '../models/usuario.model';
+
 import { Constantes } from '../other/constantes';
 import { UsuarioModel } from '../other/interfaces';
 
@@ -11,7 +11,7 @@ import { UsuarioModel } from '../other/interfaces';
 })
 export class UserService {
 
-  user: UsuarioModel = new Usuario;
+  user!: UsuarioModel;
   localStorage: Storage = window.localStorage;
 
 
@@ -33,9 +33,6 @@ export class UserService {
   change_datos(datos:any) {
     let id = this.user.id
 
-    console.log(datos.fecha_nacimiento);
-    
-
     this._http.put<UsuarioModel>(`${this._constantes.url_base}/usuario/datos/${id}`,datos).subscribe(response => {
       this.retrieve_user()
     })
@@ -43,8 +40,6 @@ export class UserService {
 
   change_password(password: String) {
     let id = this.user.id;
-    
-    console.log(password);
     
     this._http.put<UsuarioModel>(`${this._constantes.url_base}/usuario/contra/${id}`, {
       password : password
@@ -69,5 +64,11 @@ export class UserService {
   logout_user() {
     localStorage.removeItem('user');
     this.router.navigate(['']);
+  }
+
+  registrarUsuario(datos : any) {
+    this._http.post<UsuarioModel>(`${this._constantes.url_base}/usuario/registro`,datos).subscribe(response => {
+      console.log(response)
+    })
   }
 }

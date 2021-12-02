@@ -1,12 +1,13 @@
 *{
-    margin-left: 78px;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
 }
 
-.tabla {
+.cont_Acts {
     display: flex;
 	align-items: center;
-	width: 57%;
-	/* height: 50%; */
+	flex-direction: column;
+	width: 60%;
 	background-color: #FF0000;
 	position: absolute;
 	left: 50%;
@@ -18,4 +19,50 @@
 
 	box-shadow: 4px 3px 8px 1px #191919AB;
   	-webkit-box-shadow: 4px 3px 8px 1px #191919AB;
+}
+
+.texto_Tabla {
+	margin-top: 15px;
+	color: #fff;
+	font-weight: 550;
+	font-size: 35px;
+	width: 50%;
+	margin-right: 45%;
+}
+
+.lineadivisoria {
+	margin-top: -15px;
+	background: #fff;
+	height: 4px;
+	width: 100%;
+	margin-bottom: 30px;
+}
+
+.mensajeError{
+	font-size: 25px;
+	font-weight: 400;
+	color: #fff;
+}
+
+.tabla {
+	width: 100%;
+	border-radius: 15px;
+}
+
+.botonesBajos {
+	align-items: center;
+	flex-direction: column;
+	width: 100%;
+	margin-top: 20px;
+	display: flex;
+}
+
+.botonAceptarAct{
+	margin-top: 10px;
+	margin-right: 50px;
+	width: 60%;
+}
+
+.iconoboton {
+	font-size: 30px;
 }

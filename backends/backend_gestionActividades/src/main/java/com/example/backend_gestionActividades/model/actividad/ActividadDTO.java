@@ -19,8 +19,8 @@ public class ActividadDTO {
     private String dificultad;
     private ArrayList<String> materiales_proporcionados;
     private ArrayList<String> materiales_necesarios;
-    private Date fecha_inicio;
-    private Date fecha_final;
+    private String fecha_inicio;
+    private String fecha_final;
     private Double precio;
     private int capacidad_minima;
     private int capacidad_maxima;
