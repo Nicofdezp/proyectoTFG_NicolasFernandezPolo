@@ -68,7 +68,10 @@ export class UserService {
 
   registrarUsuario(datos : any) {
     this._http.post<UsuarioModel>(`${this._constantes.url_base}/usuario/registro`,datos).subscribe(response => {
-      console.log(response)
+      console.log(response);
+      
+      this.user = response;
+      this.router.navigate([''])
     })
   }
 }
